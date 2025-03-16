@@ -3,8 +3,8 @@ services:
     image: postgres:latest 
     restart: always 
     environment: 
-      POSTGRES_PASSWORD: verySecretPassword 
-      POSTGRES_USER: administrator 
+      POSTGRES_PASSWORD: pword 
+      POSTGRES_USER: admin
       POSTGRES_DB: todo 
     volumes: 
       - ./data/db:/var/lib/postgresql/data 
