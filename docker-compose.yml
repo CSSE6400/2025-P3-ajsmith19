@@ -1,14 +1,14 @@
 services: 
-   database: 
+  database: 
     image: postgres:latest 
     restart: always 
     environment: 
-      POSTGRES_PASSWORD: pword 
-      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: verySecretPassword
+      POSTGRES_USER: administrator
       POSTGRES_DB: todo 
     volumes: 
       - ./data/db:/var/lib/postgresql/data 
-   app: 
+  app: 
     build: . 
     restart: always 
     environment: 
