@@ -8,7 +8,12 @@ services:
       POSTGRES_DB: todo 
     volumes: 
       - ./data/db:/var/lib/postgresql/data
-  app: 
+  app:
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:6400/api/v1/health"]
+      interval: 10s
+      retries: 5
+      start_period: 30s
     build: . 
     restart: always 
     environment: 
